@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f4f8; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 24px 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+    h1 { text-align: center; color: #1f3a5f; }
+    fieldset { margin-bottom: 20px; border: 1px solid #b8c2d1; border-radius: 6px; }
+    legend { font-weight: bold; color: #1f3a5f; padding: 0 8px; }
+    label { display: inline-block; min-width: 150px; margin: 6px 0; font-weight: 600; }
+    input[type=text], input[type=email], input[type=tel], input[type=date], input[type=number], select, textarea {
+      padding: 6px; width: 60%; border: 1px solid #aab; border-radius: 4px; box-sizing: border-box;
+    }
+    .row { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #b8c2d1; padding: 6px; text-align: left; }
+    th { background: #e6ecf5; }
+    td input { width: 95%; }
+    .buttons { text-align: center; }
+    button, input[type=submit], input[type=reset] { padding: 10px 24px; margin: 0 8px; border: none; border-radius: 4px; background: #1f3a5f; color: #fff; cursor: pointer; font-size: 15px; }
+    input[type=reset] { background: #777; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Biodata Form</h1>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+
+    <!-- Personal Details -->
+    <fieldset>
+      <legend>Personal Details</legend>
+      <div class="row">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+      </div>
+      <div class="row">
+        <label for="fathername">Father's Name:</label>
+        <input type="text" id="fathername" name="fathername">
+      </div>
+      <div class="row">
+        <label for="mothername">Mother's Name:</label>
+        <input type="text" id="mothername" name="mothername">
+      </div>
+      <div class="row">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="row">
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male"><label for="male" style="min-width:0">Male</label>
+        <input type="radio" id="female" name="gender" value="Female"><label for="female" style="min-width:0">Female</label>
+        <input type="radio" id="other" name="gender" value="Other"><label for="other" style="min-width:0">Other</label>
+      </div>
+      <div class="row">
+        <label for="marital">Marital Status:</label>
+        <select id="marital" name="marital">
+          <option value="">-- Select --</option>
+          <option>Single</option>
+          <option>Married</option>
+          <option>Divorced</option>
+          <option>Widowed</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" value="Indian">
+      </div>
+      <div class="row">
+        <label for="blood">Blood Group:</label>
+        <select id="blood" name="blood">
+          <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="photo">Passport Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+      </div>
+    </fieldset>
+
+    <!-- Contact Details -->
+    <fieldset>
+      <legend>Contact Details</legend>
+      <div class="row">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+      </div>
+      <div class="row">
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="10-digit number" required>
+      </div>
+      <div class="row">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3"></textarea>
+      </div>
+      <div class="row">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+      </div>
+      <div class="row">
+        <label for="state">State:</label>
+        <select id="state" name="state">
+          <option value="">-- Select --</option>
+          <option>Madhya Pradesh</option>
+          <option>Maharashtra</option>
+          <option>Rajasthan</option>
+          <option>Uttar Pradesh</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="pin">PIN Code:</label>
+        <input type="text" id="pin" name="pin" pattern="[0-9]{6}" maxlength="6">
+      </div>
+    </fieldset>
+
+    <!-- Educational Qualification -->
+    <fieldset>
+      <legend>Educational Qualification</legend>
+      <table>
+        <thead>
+          <tr><th>Examination</th><th>Board / University</th><th>Year</th><th>Percentage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>10th</td><td><input type="text" name="board10"></td><td><input type="number" name="year10" min="1980" max="2030"></td><td><input type="number" name="perc10" min="0" max="100" step="0.01"></td></tr>
+          <tr><td>12th</td><td><input type="text" name="board12"></td><td><input type="number" name="year12" min="1980" max="2030"></td><td><input type="number" name="perc12" min="0" max="100" step="0.01"></td></tr>
+          <tr><td>Graduation</td><td><input type="text" name="boardgrad"></td><td><input type="number" name="yeargrad" min="1980" max="2030"></td><td><input type="number" name="percgrad" min="0" max="100" step="0.01"></td></tr>
+          <tr><td>Post Graduation</td><td><input type="text" name="boardpg"></td><td><input type="number" name="yearpg" min="1980" max="2030"></td><td><input type="number" name="percpg" min="0" max="100" step="0.01"></td></tr>
+        </tbody>
+      </table>
+    </fieldset>
+
+    <!-- Other Details -->
+    <fieldset>
+      <legend>Other Details</legend>
+      <div class="row">
+        <label>Languages Known:</label>
+        <input type="checkbox" id="hindi" name="lang" value="Hindi"><label for="hindi" style="min-width:0">Hindi</label>
+        <input type="checkbox" id="english" name="lang" value="English"><label for="english" style="min-width:0">English</label>
+        <input type="checkbox" id="marathi" name="lang" value="Marathi"><label for="marathi" style="min-width:0">Marathi</label>
+        <input type="checkbox" id="otherlang" name="lang" value="Other"><label for="otherlang" style="min-width:0">Other</label>
+      </div>
+      <div class="row">
+        <label for="hobbies">Hobbies:</label>
+        <input type="text" id="hobbies" name="hobbies" placeholder="Reading, Cricket, Music...">
+      </div>
+      <div class="row">
+        <label for="skills">Skills:</label>
+        <textarea id="skills" name="skills" rows="2"></textarea>
+      </div>
+      <div class="row">
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+      </div>
+      <div class="row">
+        <label for="declaration-text">Declaration:</label>
+        <p>I hereby declare that all the information given above is true to the best of my knowledge.</p>
+      </div>
+      <div class="row">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree" style="min-width:0">I agree to the declaration.</label>
+      </div>
+      <div class="row">
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place">
+      </div>
+      <div class="row">
+        <label for="signdate">Date:</label>
+        <input type="date" id="signdate" name="signdate">
+      </div>
+    </fieldset>
+
+    <div class="buttons">
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </div>
+  </form>
+</div>
+</body>
+</html>
